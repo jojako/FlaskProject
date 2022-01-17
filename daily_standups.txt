@@ -1,0 +1,4 @@
+## 2022-01-17
+Första mötet. Vi kom överens om att vi ska göra en nyhetssajt som hämtar nyheter från olika tjänster och där användaren kan välja vilka kanaler som sidan ska visa innehåll ifrån. Användaren ska skapa ett konto för att få åtkomst till tjänsten och för att vi ska kunna spara inställningarna för varje användare. 
+
+Dagen går åt att lägga in så mycket vi kommer på i backlog och göra research på hur vi kan gå framåt med projektet.
