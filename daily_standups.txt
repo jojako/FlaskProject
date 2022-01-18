@@ -2,3 +2,6 @@
 Första mötet. Vi kom överens om att vi ska göra en nyhetssajt som hämtar nyheter från olika tjänster och där användaren kan välja vilka kanaler som sidan ska visa innehåll ifrån. Användaren ska skapa ett konto för att få åtkomst till tjänsten och för att vi ska kunna spara inställningarna för varje användare. 
 
 Dagen går åt att lägga in så mycket vi kommer på i backlog och göra research på hur vi kan gå framåt med projektet.
+
+## 2022-01-18
+Johannes börjar med blueprints för öppna delen av sidan och Alexander börjar med att skapa app-objektet för att sedan påbörja startsidan (home.html). Vi bestämde oss för att använda Bulma som css ramverk då det verkade passa vårt behov. Vi har även gjort en Miro board där vi planerat vilka sidor som bör finnas och upplägg i menyerna.
