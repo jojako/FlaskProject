@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>My Webpage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
 </head>
 <body>
-
+   <section class="hero is-primary is-fullheight">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="{{ url_for('bp_open.index') }}" class="navbar-item">Home</a>
+                            <a href="{{ url_for('bp_open.about') }}" class="navbar-item">About</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        {% block content %}
+        {% endblock %}
+        <hr />
+        {% block footer %}
+        {% endblock %}
+   </section>
 </body>
 </html>
