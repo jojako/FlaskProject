@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
 </head>
 <body>
-   <section class="hero is-primary is-fullheight">
+   <hr class="hero is-primary is-fullheight">
         <div class="hero-head">
             <nav class="navbar">
                 <div class="container">
@@ -24,7 +24,7 @@
         </div>
         {% block content %}
         {% endblock %}
-
+        <hr />
         {% block footer %}
         {% endblock %}
    </section>
