@@ -2,10 +2,25 @@
     background-color: #406882;
 }
 
+#splash-screen {
+    background-color: #B1D0E0;
+}
+
 .navbar-item {
     color: #ffffff;
 }
 a.navbar-item:hover {
     background-color: #6998AB;
     color: #ffffff;
+}
+#about {
+    background-color: #EEEEEE;
+}
+
+p.title {
+    font-size: 8rem;
+}
+
+p.subtitle {
+    font-size: 3rem;
 }

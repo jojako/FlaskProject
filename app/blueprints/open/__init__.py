@@ -16,10 +16,3 @@ def login():
 @bp_open.get('/signup')
 def signup():
     return render_template('signup.html')
-
-
-@bp_open.get('/about')
-def about():
-    return render_template('about.html')
-
-

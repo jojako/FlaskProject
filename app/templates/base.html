@@ -13,7 +13,7 @@
                 <div class="container">
                         <div class="navbar-start">
                             <a href="{{ url_for('bp_open.index') }}" class="navbar-item">Home</a>
-                            <a href="{{ url_for('bp_open.about') }}" class="navbar-item">About</a>
+                            <a href="#about" class="navbar-item">About</a>
                             <a href="{{ url_for('bp_open.signup') }}" class="navbar-item">Sign up</a>
                             <a href="{{ url_for('bp_open.login') }}" class="navbar-item">Login</a>
                         </div>
@@ -22,8 +22,9 @@
         </div>
         {% block content %}
         {% endblock %}
-        <hr />
+
         {% block footer %}
+            <h3>Footer</h3>
         {% endblock %}
    </section>
 </body>
