@@ -1,0 +1,7 @@
+venv/
+.idea/
+__pycache__/
+.gitignore
+.DS_Store
+.pyc*
+.pyo*
