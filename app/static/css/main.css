@@ -20,3 +20,7 @@ a.navbar-item:hover {
 #welcome-splash-title {
     font-size: 8rem;
 }
+
+#form-background {
+    background-color: #6998AB;
+}
