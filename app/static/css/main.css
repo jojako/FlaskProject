@@ -17,10 +17,6 @@ a.navbar-item:hover {
     background-color: #EEEEEE;
 }
 
-p.title {
+#welcome-splash-title {
     font-size: 8rem;
-}
-
-p.subtitle {
-    font-size: 3rem;
 }
