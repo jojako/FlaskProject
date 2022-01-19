@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 
 bp_open = Blueprint('bp_open', __name__)
 
@@ -16,3 +16,13 @@ def login():
 @bp_open.get('/signup')
 def signup():
     return render_template('signup.html')
+
+@bp_open.post('/signup')
+def signup_post():
+    first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    print(first_name, last_name, email, password)
+    ## TODO: gör mer här
