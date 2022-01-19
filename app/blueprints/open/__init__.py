@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 from flask import Blueprint, render_template, request
+=======
+from urllib import request
+from flask import Blueprint, render_template, request
+
+>>>>>>> html
 
 bp_open = Blueprint('bp_open', __name__)
 
@@ -11,6 +17,12 @@ def index():
 @bp_open.get('/login')
 def login():
     return render_template('login.html')
+
+@bp_open.post('/login')
+def login_post():
+    email = request.form.get(email)
+    password = request.form.get(password)
+    
 
 
 @bp_open.get('/signup')

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="column is-4 is-offset-4">
+        <div class="container">
+            <p class="title has-text-centered">Enter details</p>
+
+            <form id="login-form" class="box" action="/login" method="POST">
+                <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                    <input class="input" name="email" type="email" placeholder="e.g. alex@example.com">
+                </div>
+                </div>
+
+                <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                    <input class="input" name="password" type="password" placeholder="********">
+                </div>
+                </div>
+
+                <button class="button is-danger">Login</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
