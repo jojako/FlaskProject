@@ -1,17 +1,37 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block title %}Sign Up{% endblock %} {% block
+content %}
+<div class="column is-4 is-offset-4">
+	<div class="container">
+		<p class="title has-text-centered">Create an account</p>
 
-{% block title %}Sign Up{% endblock %}
+		<form class="box" action="/signup" method="POST">
+            <div class="field">
+                <label class="label">First name</label>
+                <div class="control">
+                    <input class="input" name="fname" type="text" placeholder="Alice">
+                </div>
+            </div>
+			<div class="field">
+                <label class="label">Last name</label>
+                <div class="control">
+                    <input class="input" name="lname" type="text" placeholder="Johnson">
+                </div>
+            </div>
+			<div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                    <input class="input" name="email" type="email" placeholder="alice.johnson@email.com">
+                </div>
+            </div>
+			<div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                    <input class="input" name="password" type="password" placeholder="************" required>
+                </div>
+            </div>
 
-{% block content %}
-<form action="/signup" method="POST">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="first_name" name="first_name"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="last_name" name="last_name"><br>
-    <label for="email">Email:</label><br>
-  <input type="text" id="email" name="email" required><br>
-    <label for="pass">Password:</label><br>
-  <input type="password" id="password" name="password" required><br>
-    <input type="submit" value="Submit">
-</form>
+			<button class="button is-danger">Sign up</button>
+		</form>
+	</div>
+</div>
 {% endblock %}
