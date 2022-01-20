@@ -1,9 +1,9 @@
-from app.persistance.model import User
 from werkzeug.security import generate_password_hash
 import datetime
 
 
 def create_user(first_name, last_name, email, password):
+    from app.persistance.model import User
     user = (
         {
             'first_name': first_name,
@@ -17,4 +17,3 @@ def create_user(first_name, last_name, email, password):
         }
     )
     User.collection.insert_one(user)
-
