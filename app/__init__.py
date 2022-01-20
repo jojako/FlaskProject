@@ -10,6 +10,9 @@ def create_app():
     from app.blueprints.open import bp_open
     app.register_blueprint(bp_open)
 
+    from app.blueprints.user import bp_user
+    app.register_blueprint(bp_user)
+
     return app
 
 
