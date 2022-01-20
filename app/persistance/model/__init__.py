@@ -1,6 +1,5 @@
-def main():
-    pass
+from app.persistance.db import db
 
 
-if __name__ == '__main__':
-    main()
+class User:
+    collection = db.users

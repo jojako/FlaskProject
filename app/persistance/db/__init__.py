@@ -1,13 +1,12 @@
 from pymongo import MongoClient
 
-client = MongoClient(f'mongodb://root:s3cr37@localhost:27022')
-db = client.login_db
+client = None
+db = None
 
 
 def init_db(app):
 
     global client, db
-
     username = app.config['DB_USER']
     password = app.config['DB_PASSWORD']
     host = app.config['DB_HOST']
