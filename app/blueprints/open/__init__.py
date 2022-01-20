@@ -1,6 +1,6 @@
 from urllib import request
-from flask import Blueprint, render_template, request, redirect, url_for
-from app.controller import create_user
+from flask import Blueprint, render_template, request, redirect, url_for, flash
+from app.controller.user_controller import create_user
 
 
 bp_open = Blueprint('bp_open', __name__)
