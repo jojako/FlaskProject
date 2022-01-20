@@ -1,6 +1,5 @@
 from flask import Flask
-
-from app.persistance.db import init_db, db
+from app.persistance.db import init_db
 
 
 def create_app():
