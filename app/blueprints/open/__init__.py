@@ -1,7 +1,7 @@
 from urllib import request
 from flask import Blueprint, render_template, request, redirect, url_for
-
 from app.controller import create_user
+
 
 bp_open = Blueprint('bp_open', __name__)
 
@@ -14,6 +14,7 @@ def index():
 @bp_open.get('/login')
 def login():
     return render_template('login.html')
+
 
 @bp_open.post('/login')
 def login_post():
@@ -38,6 +39,4 @@ def signup_post():
     email = request.form.get('email')
     password = request.form.get('password')
     create_user(first_name, last_name, email, password)
-    print(first_name, last_name, email, password)
     return redirect(url_for('bp_open.login'))
-    ## TODO: gör mer här

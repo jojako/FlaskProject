@@ -5,7 +5,6 @@ db = None
 
 
 def init_db(app):
-
     global client, db
     username = app.config['DB_USER']
     password = app.config['DB_PASSWORD']
