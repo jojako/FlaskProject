@@ -1,21 +1,24 @@
 from flask import Flask
 from flask_login import LoginManager
-from app.persistance.db import init_db, ResultList
-from app.settings import S_KEY
+
+from app.controller.user_controller import get_user_by_email
+from app.settings import SECRET_KEY
 
 
 def create_app():
     app = Flask(__name__, template_folder='./templates')
     app.config.from_pyfile('settings.py')
-    app.config['SECRET_KEY'] = f'{S_KEY}'
+    app.config['SECRET_KEY'] = f'{SECRET_KEY}'
+
+    from app.persistance.db import init_db, ResultList
+    init_db()
 
     login_manager = LoginManager()
     login_manager.init_app(app)
 
     @login_manager.user_loader
-    def load_user(user_id):
-        from app.persistance.model import User
-        return User.collection.find(email=user_id).first_or_none()
+    def load_user(user_email):
+        return get_user_by_email(user_email)
 
     from app.blueprints.open import bp_open
     app.register_blueprint(bp_open)
