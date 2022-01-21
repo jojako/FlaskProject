@@ -8,7 +8,7 @@ def create_app():
     app.config.from_pyfile('settings.py')
     app.config['SECRET_KEY'] = f'{SECRET_KEY}'
 
-    from app.persistance.db import init_db, ResultList
+    from app.persistance.db import init_db
     init_db(app)
 
     login_manager = LoginManager()
