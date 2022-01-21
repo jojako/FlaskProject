@@ -1,6 +1,6 @@
 from urllib import request
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from app.controller.user_controller import create_user, verify_user_credentials
+from app.controller.user_controller import create_user, verify_user_credentials, get_user_by_email, signin_user
 
 bp_open = Blueprint('bp_open', __name__)
 
@@ -20,8 +20,12 @@ def login_post():
     email = request.form.get('email')
     password = request.form.get('password')
     if not verify_user_credentials(email, password):
-        pass
-    # TODO: Set last sign in timestamp
+        flash('Wrong password or email')
+        redirect(url_for('bp_open.login'))
+
+    signin_user(email)
+
+    return redirect(url_for('bp_open.index'))
 
 
 @bp_open.get('/signup')
@@ -35,5 +39,10 @@ def signup_post():
     last_name = request.form.get('last_name')
     email = request.form.get('email')
     password = request.form.get('password')
+
+    if get_user_by_email(email) is not None:
+        flash('Account already exists. Try to login instead.')
+        return redirect(url_for('bp_open.login'))
+
     create_user(first_name, last_name, email, password)
     return redirect(url_for('bp_open.login'))

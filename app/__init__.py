@@ -1,7 +1,5 @@
 from flask import Flask
 from flask_login import LoginManager
-
-from app.controller.user_controller import get_user_by_email
 from app.settings import SECRET_KEY
 
 
@@ -11,13 +9,14 @@ def create_app():
     app.config['SECRET_KEY'] = f'{SECRET_KEY}'
 
     from app.persistance.db import init_db, ResultList
-    init_db()
+    init_db(app)
 
     login_manager = LoginManager()
     login_manager.init_app(app)
 
     @login_manager.user_loader
     def load_user(user_email):
+        from app.controller.user_controller import get_user_by_email
         return get_user_by_email(user_email)
 
     from app.blueprints.open import bp_open

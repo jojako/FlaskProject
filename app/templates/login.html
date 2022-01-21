@@ -8,6 +8,15 @@
         <p class="title has-text-centered">Enter details</p>
 
         <form class="box" action="/login" method="POST">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="notification is-danger">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <div class="field">
                 <label class="label">Email</label>
                 <div class="control">
