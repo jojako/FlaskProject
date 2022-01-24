@@ -12,3 +12,18 @@ Alexander har jobbat med back-end sidan för sign up funktionen och den verkar l
 funktioner för att kunna logga in. Johannes har en grundläggande template för vår user när den är inloggad och
 fortstätter läsa på om Flask-login och utöka de andra templatesen. Planerar inför nästa vecka och laddar
 på backloggen med uppgifter för att kunna planera sprint nästa vecka.
+
+## 2022-01-24
+Funderat kring vilka nyhetskällor vi ska försöka hämta data från. Kommit fram till dessa:
+
+Aftonbladet
+Sveriges Radio
+Dagens Nyheter
+DN Ekonomi
+CNN
+
+Vi har planerat ny sprint för veckan och diskuterat vad vi mer kan ladda på backloggen med. Vi har haft problem
+med att få vår användare att verifieras efter login och har valt att använda Joakims Document-klass för att
+underlätta vissa problem med PyMongo och Johannes påbörjar konvertering av koden idag. Alexander jobbar med att
+ta fram en grundläggande template för user-page där vi sedan ska få in nyhetsfeeden.
+
