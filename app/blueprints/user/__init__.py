@@ -9,3 +9,9 @@ bp_user = Blueprint('bp_user', __name__)
 @login_required
 def profile():
     return render_template('profile.html')
+
+
+@bp_user.get('/newsfeed')
+@login_required
+def newsfeed():
+    return render_template('newsfeed.html')
