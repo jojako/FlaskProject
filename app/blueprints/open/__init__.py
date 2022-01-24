@@ -61,6 +61,12 @@ def signup_post():
     return redirect(url_for('bp_open.login'))
 
 
+@bp_open.get('/about')
+def about():
+    return redirect(url_for('bp_open.index', _anchor='about'))
+
+
+
     """
     if get_user_by_email(email) is not None:
         flash('Account already exists. Try to login instead.')
