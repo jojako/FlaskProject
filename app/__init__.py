@@ -15,9 +15,9 @@ def create_app():
     login_manager.init_app(app)
 
     @login_manager.user_loader
-    def load_user(user_email):
-        from app.controller.user_controller import get_user_by_email
-        return get_user_by_email(user_email)
+    def load_user(user_id):
+        from app.persistance.model import User
+        return User.find(email=user_id).first_or_none()
 
     from app.blueprints.open import bp_open
     app.register_blueprint(bp_open)

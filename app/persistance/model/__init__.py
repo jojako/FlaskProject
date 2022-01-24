@@ -1,7 +1,7 @@
-from app.persistance.db import db
+from app.persistance.db import db, Document
 
 
-class User:
+class User(Document):
     collection = db.users
 
     def is_authenticated(self):

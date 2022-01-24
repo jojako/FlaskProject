@@ -8,4 +8,4 @@ bp_user = Blueprint('bp_user', __name__)
 @bp_user.get('/account')
 @login_required
 def profile():
-    render_template('profile.html')
+    return render_template('profile.html')
