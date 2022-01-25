@@ -3,9 +3,13 @@
 {% block title %}Profile page{% endblock %}
 
 {% block content %}
-<div class="hero column is-4 is-offset-4 is-fullheight">
-    <div class="container">
-        <p class="title has-text-centered">Welcome to your profile {{ current_user.first_name }}</p>
+<section class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="column is-4 is-offset-4">
+            <div class="container">
+                <p class="title has-text-centered">Welcome to your profile {{ current_user.first_name }}</p>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 {% endblock %}
