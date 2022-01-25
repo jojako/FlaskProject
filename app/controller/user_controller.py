@@ -21,6 +21,10 @@ def create_user(first_name, last_name, email, password):
     )
     user.save()
 
+
+def get_user_by_email(email):
+    return user_repo.get_user_by_email(email)
+
 """
 def get_user_by_email(email):
     return user_repo.get_user_by_email(email)

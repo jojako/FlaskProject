@@ -9,3 +9,5 @@ bp_user = Blueprint('bp_user', __name__)
 @login_required
 def profile():
     return render_template('profile.html')
+
+
