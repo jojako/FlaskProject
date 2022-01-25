@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
 </head>
 <body>
+    <section id="navbar-hero" class="hero">
+        <div class="hero-head">
             <nav class="navbar">
                 <div class="container">
                     <div class="navbar-menu">
@@ -27,13 +29,15 @@
                     </div>
                 </div>
             </nav>
-        {% block content %}
-        
-        {% endblock %}
-        
-        {% block footer %}
-            <h3>Footer</h3>
-        {% endblock %}
+        </div>
+    </section>
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+    <h3>Footer</h3>
+{% endblock %}
 
 </body>
 </html>
