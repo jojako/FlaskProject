@@ -3,7 +3,8 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_user
 from werkzeug.security import check_password_hash
 
-from app.controller.user_controller import create_user
+from app.controller import user_controller
+#from app.persistance.repository.user_repo import get_user_by_email
 
 bp_open = Blueprint('bp_open', __name__)
 
@@ -22,18 +23,12 @@ def login():
 def login_post():
     email = request.form.get('email')
     password = request.form.get('password')
-    from app.persistance.model import User
-    user = User.find(email=email).first_or_none()
-    if user is None:
-        flash('Wrong password or email')
+
+    if not user_controller.verify_user(email, password):
+        flash("Wrong email or password")
         return redirect(url_for('bp_open.login'))
 
-    if not check_password_hash(user.password, password):
-        flash('Wrong password or email')
-        return redirect(url_for('bp_open.login'))
-
-    login_user(user)
-    #Last sign in här (med user.save)
+    user_controller.signin_user(email)
 
     return redirect(url_for('bp_open.index'))
 
@@ -57,21 +52,10 @@ def signup_post():
         flash('Email already exists')
         return redirect(url_for('bp_open.signup'))
 
-    create_user(first_name, last_name, email, password)
+    user_controller.create_user(first_name, last_name, email, password)
     return redirect(url_for('bp_open.login'))
 
 
 @bp_open.get('/about')
 def about():
     return redirect(url_for('bp_open.index', _anchor='about'))
-
-
-
-    """
-    if get_user_by_email(email) is not None:
-        flash('Account already exists. Try to login instead.')
-        return redirect(url_for('bp_open.login'))
-
-    create_user(first_name, last_name, email, password)
-    return redirect(url_for('bp_open.login'))
-    """
