@@ -35,7 +35,7 @@ def login_post():
     login_user(user)
     #Last sign in här (med user.save)
 
-    return redirect(url_for('bp_open.index'))
+    return redirect(url_for('bp_user.newsfeed'))
 
 
 @bp_open.get('/signup')
