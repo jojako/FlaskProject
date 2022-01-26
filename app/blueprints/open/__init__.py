@@ -28,9 +28,14 @@ def login_post():
         flash("Wrong email or password")
         return redirect(url_for('bp_open.login'))
 
+<<<<<<< HEAD
     user_controller.signin_user(email)
+=======
+    login_user(user)
+    #TODO: Last sign in här (med user.save)
+>>>>>>> 649f8ab293e0897fb335f72e81d5e477fd93b14f
 
-    return redirect(url_for('bp_open.index'))
+    return redirect(url_for('bp_user.newsfeed'))
 
 
 @bp_open.get('/signup')
