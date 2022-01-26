@@ -33,7 +33,7 @@ def login_post():
         return redirect(url_for('bp_open.login'))
 
     login_user(user)
-    #Last sign in här (med user.save)
+    #TODO: Last sign in här (med user.save)
 
     return redirect(url_for('bp_user.newsfeed'))
 
