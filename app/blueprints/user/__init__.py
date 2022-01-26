@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for
 from flask_login import login_required, logout_user
-## TODO: Flask Login needs to make sure you're authenticated
 
 bp_user = Blueprint('bp_user', __name__)
 
@@ -9,7 +8,6 @@ bp_user = Blueprint('bp_user', __name__)
 @login_required
 def profile():
     return render_template('profile.html')
-
 
 
 @bp_user.get('/newsfeed')
