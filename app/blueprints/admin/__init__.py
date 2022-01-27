@@ -13,3 +13,13 @@ def before_request():
 @bp_admin.get('/admin')
 def admin_get():
     return render_template('admin.html')
+
+
+@bp_admin.get('/edit-users')
+def edit_users():
+    return render_template('edit_users.html')
+
+
+@bp_admin.get('/edit-news')
+def edit_users():
+    return render_template('edit_news.html')
