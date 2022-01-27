@@ -39,3 +39,7 @@ def signin_user(email):
         login_user(user)
 
         user_repo.set_lastsignin(email)
+
+
+def find_all_users():
+    return user_repo.find_all_users()

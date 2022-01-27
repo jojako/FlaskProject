@@ -17,3 +17,6 @@ def set_lastsignin(email):
     user.save()
 
 
+def find_all_users():
+    return User.find()
+

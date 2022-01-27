@@ -3,6 +3,7 @@ from flask_login import current_user
 
 bp_admin = Blueprint('bp_admin', __name__)
 
+
 @bp_admin.before_request
 def before_request():
     if not current_user.is_authenticated or not current_user.has_access('admin'):
