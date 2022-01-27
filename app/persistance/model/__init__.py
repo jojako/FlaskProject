@@ -6,6 +6,7 @@ ACCESS = {
     'admin': 2
 }
 
+
 class User(Document):
     collection = db.users
 
@@ -21,5 +22,5 @@ class User(Document):
     def get_id(self):
         return self.email
 
-    def access_level(self, level):
+    def has_access(self, level):
         return ACCESS[self.accesslevel] >= ACCESS[level]

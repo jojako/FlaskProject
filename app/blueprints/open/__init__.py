@@ -27,8 +27,6 @@ def login_post():
 
     user_controller.signin_user(email)
 
-    login_user(email)
-
     return redirect(url_for('bp_user.newsfeed'))
 
 
