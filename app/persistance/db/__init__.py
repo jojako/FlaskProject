@@ -16,7 +16,6 @@ def init_db(app):
     db = client[database]
 
 
-
 class ResultList(list):
     def first_or_none(self):
         return self[0] if len(self) > 0 else None
