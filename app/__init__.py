@@ -25,6 +25,9 @@ def create_app():
     from app.blueprints.user import bp_user
     app.register_blueprint(bp_user)
 
+    from app.blueprints.admin import bp_admin
+    app.register_blueprint(bp_admin)
+
     return app
 
 
