@@ -1,10 +1,7 @@
 from urllib import request
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_user
-from werkzeug.security import check_password_hash
-
 from app.controller import user_controller
-#from app.persistance.repository.user_repo import get_user_by_email
 
 bp_open = Blueprint('bp_open', __name__)
 
@@ -28,12 +25,9 @@ def login_post():
         flash("Wrong email or password")
         return redirect(url_for('bp_open.login'))
 
-<<<<<<< HEAD
     user_controller.signin_user(email)
-=======
-    login_user(user)
-    #TODO: Last sign in här (med user.save)
->>>>>>> 649f8ab293e0897fb335f72e81d5e477fd93b14f
+
+    login_user(email)
 
     return redirect(url_for('bp_user.newsfeed'))
 
