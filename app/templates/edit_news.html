@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit news sources{% endblock %}
+
+{% block content %}
+    <section class="hero is-light is-medium has-text-centered">
+        <div class="hero-body">
+            <p class="title">Edit news sources</p>
+            <p class="subtitle">Here you can add/remove users & news sources</p>
+        </div>
+    </section>
+    <section class="hero">
+        <nav id="admin-submenu" class="navbar">
+            <div class="container">
+                <div class="navbar-start">
+                    <div class="buttons">
+                        <a class="button is-light">
+                            <strong>Edit Users</strong>
+                        </a>
+                        <a class="button is-light">
+                            <strong>Edit Sources</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+{% endblock %}
+

@@ -10,9 +10,28 @@
     color: #ffffff;
 }
 a.navbar-item:hover {
-    background-color: #6998AB;
+    background-color: #406882;
+    color: #000000;
+}
+
+.navbar-link {
     color: #ffffff;
 }
+navbar-link:hover {
+    background-color: #406882;
+    color: #000000;
+}
+
+
+navbar-link {
+    background-color: #406882;
+}
+
+.navbar-dropdown {
+    background-color: #406882;
+}
+
+
 #about {
     background-color: #F9F9F9;
 }
@@ -27,4 +46,12 @@ a.navbar-item:hover {
 
 #admin-submenu {
     background-color: #406882;
+}
+
+#add-user {
+    margin: 4%;
+}
+
+#delete-user {
+    margin: 4%;
 }

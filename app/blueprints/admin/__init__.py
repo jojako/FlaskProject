@@ -17,9 +17,11 @@ def admin_get():
 
 @bp_admin.get('/edit-users')
 def edit_users():
-    return render_template('edit_users.html')
+    from app.controller.user_controller import find_all_users
+    users = find_all_users()
+    return render_template('edit_users.html', userlist=users)
 
 
 @bp_admin.get('/edit-news')
-def edit_users():
+def edit_news_sources():
     return render_template('edit_news.html')

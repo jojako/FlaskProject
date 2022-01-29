@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit users{% endblock %}
+
+{% block content %}
+    <section class="hero is-light is-medium has-text-centered">
+        <div class="hero-body">
+            <p class="title">Edit Users</p>
+            <p class="subtitle">Manage users from the database</p>
+        </div>
+    </section>
+    <section class="hero">
+        <nav id="admin-submenu" class="navbar">
+            <div class="hero">
+                <div id="edit-user-buttons" class="navbar">
+                    <a id="add-user" class="button is-light">
+                        <strong>Add new user</strong>
+                    </a>
+                    <a id="delete-user" class="button is-danger">
+                        <strong>Delete selected users</strong>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section class="hero">
+            <table class="table is-striped">
+                <thead>
+                    <th></th>
+                    <th>#</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                    <th>Last visit</th>
+                </thead>
+                <tbody>
+                    {% for user in userlist %}
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>{{ loop.index }}</th>
+                            <td>{{ user.first_name }}</td>
+                            <td>{{ user.last_name }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.last_signin }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </section>
+{% endblock %}
