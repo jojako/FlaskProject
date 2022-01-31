@@ -26,7 +26,7 @@
     <section class="hero">
             <table class="table is-striped">
                 <thead>
-                    <th></th>
+                    <th><input type="checkbox" name="check_all_box"></th>
                     <th>#</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
@@ -36,7 +36,7 @@
                 <tbody>
                     {% for user in userlist %}
                         <tr>
-                            <th><input type="checkbox"></th>
+                            <th><input type="checkbox" name="user_checkbox"></th>
                             <th>{{ loop.index }}</th>
                             <td>{{ user.first_name }}</td>
                             <td>{{ user.last_name }}</td>
