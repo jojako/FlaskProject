@@ -10,11 +10,6 @@ def before_request():
         return redirect(url_for('bp_open.index'))
 
 
-@bp_admin.get('/admin')
-def admin_get():
-    return render_template('admin.html')
-
-
 @bp_admin.get('/edit-users')
 def edit_users():
     from app.controller.user_controller import find_all_users
