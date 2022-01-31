@@ -21,6 +21,7 @@ Sveriges Radio
 Dagens Nyheter
 DN Ekonomi
 CNN
+Sportbladet/Någon annan sportpublikation
 
 Vi har planerat ny sprint för veckan och diskuterat vad vi mer kan ladda på backloggen med. Vi har haft problem
 med att få vår användare att verifieras efter login och har valt att använda Joakims Document-klass för att
