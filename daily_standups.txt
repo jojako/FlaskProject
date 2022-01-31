@@ -28,3 +28,12 @@ med att få vår användare att verifieras efter login och har valt att använda
 underlätta vissa problem med PyMongo och Johannes påbörjar konvertering av koden idag. Alexander jobbar med att
 ta fram en grundläggande template för user-page där vi sedan ska få in nyhetsfeeden.
 
+## 2022-01-31
+Alexander har lagt grunden för vår ena admin sida "edit-users.html" där man nu
+kan läsa in alla användare och se dem i en tabell. Ytterligare funktionalitet
+ska läggas till så som ett sätt att markera alla användare och en knapp med
+en funktion som raderar ur databasen. Johannes har lagt till funktion för 
+att stämpla "last-login" i användar databasen. Vi har planerat en sprint
+för veckan med ungefär samma mängd aktivteter att göra så det bör räcka
+veckan ut. Vi läser på lite om NewsAPI och Python paketet för API:n och
+ska påbörja implementering i veckan 
