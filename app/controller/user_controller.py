@@ -1,6 +1,9 @@
 import datetime
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import login_user
+
+
+from app.persistance.model import User
 from app.persistance.repository import user_repo
 
 
@@ -42,3 +45,7 @@ def signin_user(email):
 
 def find_all_users():
     return user_repo.find_all_users()
+
+
+def delete_user(user_id):
+    return user_repo.delete_user(user_id)

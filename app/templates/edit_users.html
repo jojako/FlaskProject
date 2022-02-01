@@ -10,33 +10,33 @@
         </div>
     </section>
     <section class="hero">
+        <form class="hero" method="POST">
         <nav id="admin-submenu" class="navbar">
             <div class="hero">
-                <div id="edit-user-buttons" class="navbar">
+                <div class="navbar">
                     <a id="add-user" class="button is-light">
                         <strong>Add new user</strong>
                     </a>
-                    <a id="delete-user" class="button is-danger">
-                        <strong>Delete selected users</strong>
-                    </a>
+                    <button id="delete-user" class="button is-danger" type="submit">
+                        <strong>Delete Selected</strong>
+                    </button>
                 </div>
             </div>
         </nav>
-    </section>
-    <section class="hero">
-            <table class="table is-striped">
+            <table id="user_table" class="table is-striped">
                 <thead>
-                    <th><input type="checkbox" name="check_all_box"></th>
+                    <th><input type="checkbox" id="checkall"></th>
                     <th>#</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Email</th>
                     <th>Last visit</th>
+                    <th></th>
                 </thead>
                 <tbody>
                     {% for user in userlist %}
                         <tr>
-                            <th><input type="checkbox" name="user_checkbox"></th>
+                            <th><input type="checkbox" value="{{ user._id }}" name="user_checkbox"></th>
                             <th>{{ loop.index }}</th>
                             <td>{{ user.first_name }}</td>
                             <td>{{ user.last_name }}</td>
@@ -46,5 +46,27 @@
                     {% endfor %}
                 </tbody>
             </table>
+        </form>
     </section>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function(){
+        $("#user_table #checkall").click(function () {
+                if ($("#user_table #checkall").is(':checked')) {
+                    $("#user_table input[type=checkbox]").each(function () {
+                        $(this).prop("checked", true);
+                    });
+
+                } else {
+                    $("#user_table input[type=checkbox]").each(function () {
+                        $(this).prop("checked", false);
+                    });
+                }
+            });
+
+            ("[data-toggle=tooltip]").tooltip();
+        });
+    </script>
 {% endblock %}

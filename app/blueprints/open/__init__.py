@@ -1,4 +1,3 @@
-from urllib import request
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_user
 from app.controller import user_controller
@@ -20,7 +19,6 @@ def login():
 def login_post():
     email = request.form.get('email')
     password = request.form.get('password')
-
     if not user_controller.verify_user(email, password):
         flash("Wrong email or password")
         return redirect(url_for('bp_open.login'))

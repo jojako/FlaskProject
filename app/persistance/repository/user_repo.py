@@ -1,5 +1,4 @@
 import datetime
-
 from app.persistance.model import User
 
 
@@ -20,3 +19,6 @@ def set_lastsignin(email):
 def find_all_users():
     return User.find()
 
+
+def delete_user(user_id):
+    return User.delete(_id=user_id)
