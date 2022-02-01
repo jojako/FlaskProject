@@ -3,26 +3,69 @@
 {% block title %}Edit users{% endblock %}
 
 {% block content %}
-    <section class="hero is-light is-medium has-text-centered">
+    <section id="header-section" class="hero is-light is-medium has-text-centered">
         <div class="hero-body">
             <p class="title">Edit Users</p>
             <p class="subtitle">Manage users from the database</p>
         </div>
     </section>
-    <section class="hero">
+    <section id="user-section" class="hero">
         <form class="hero" method="POST">
-        <nav id="admin-submenu" class="navbar">
-            <div class="hero">
-                <div class="navbar">
-                    <a id="add-user" class="button is-light">
-                        <strong>Add new user</strong>
-                    </a>
-                    <button id="delete-user" class="button is-danger" type="submit">
-                        <strong>Delete Selected</strong>
-                    </button>
+            <nav id="admin-submenu" class="navbar">
+                <div class="hero">
+                    <div class="navbar">
+                        <button id="add-user" data-target="add-user-modal" class="js-modal-trigger button is-light">
+                            <strong>Add user</strong>
+                        </button>
+                        <div id="add-user-modal" class="modal">
+                            <div class="modal-background"></div>
+                            <div class="modal-content">
+                                <form id="add-user-form" class="box" action="/signup" method="POST">
+                                    {% with messages = get_flashed_messages() %}
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                <div class="notification is-danger">
+                                                    {{ message }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endwith %}
+                                    <div class="field">
+                                        <label class="label has-text-white">First name</label>
+                                        <div class="control">
+                                            <input class="input" name="first_name" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label has-text-white">Last name</label>
+                                        <div class="control">
+                                            <input class="input" name="last_name" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label has-text-white">Email</label>
+                                        <div class="control">
+                                            <input class="input" name="email" type="email">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label has-text-white">Password</label>
+                                        <div class="control">
+                                            <input class="input" name="password" type="password" required>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="button is-danger">Sign up</button>
+                                </form>
+                            </div>
+                            <button class="modal-close is-large" aria-label="close"></button>
+                        </div>
+                        <button id="delete-user" class="button is-danger" type="submit">
+                            <strong>Delete Selected</strong>
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
             <table id="user_table" class="table is-striped">
                 <thead>
                     <th><input type="checkbox" id="checkall"></th>
@@ -68,4 +111,5 @@
             ("[data-toggle=tooltip]").tooltip();
         });
     </script>
+    <script src="{{ url_for('static', filename='/js/modal.js') }}"></script>
 {% endblock %}
