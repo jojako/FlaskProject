@@ -2,21 +2,19 @@ import datetime
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import login_user
 
-
-from app.persistance.model import User
 from app.persistance.repository import user_repo
 
 
 def create_user(first_name, last_name, email, password):
     user = {
-            'first_name': first_name,
-            'last_name': last_name,
-            'email': email,
-            'password': generate_password_hash(password),
-            'accesslevel': 'user',
-            'date_created': datetime.datetime.now(),
-            'last_signin': None,
-            'activated': False
+        'first_name': first_name,
+        'last_name': last_name,
+        'email': email,
+        'password': generate_password_hash(password),
+        'accesslevel': 'user',
+        'date_created': datetime.datetime.now(),
+        'last_signin': None,
+        'activated': False
     }
     user_repo.create_user_and_save(user)
 
