@@ -6,7 +6,7 @@ content %}
             <div class="container">
                 <p class="title has-text-centered">Create an account</p>
 
-                <form class="box" action="/signup" method="POST">
+                <form class="box" action="{{ url_for('bp_open.signup_post') }}" method="POST">
                     {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             {% for message in messages %}

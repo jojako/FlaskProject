@@ -9,57 +9,15 @@
             <p class="subtitle">Manage users from the database</p>
         </div>
     </section>
-    <section id="user-section" class="hero">
-        <form class="hero" method="POST">
+
+    <section class="hero">
+        <form class="hero" action="{{ url_for('bp_admin.edit_users_post') }}" method="POST">
             <nav id="admin-submenu" class="navbar">
                 <div class="hero">
                     <div class="navbar">
-                        <button id="add-user" data-target="add-user-modal" class="js-modal-trigger button is-light">
+                        <a id="add-user" class="js-modal-trigger button" data-target="add-user-modal">
                             <strong>Add user</strong>
-                        </button>
-                        <div id="add-user-modal" class="modal">
-                            <div class="modal-background"></div>
-                            <div class="modal-content">
-                                <form id="add-user-form" class="box" action="/signup" method="POST">
-                                    {% with messages = get_flashed_messages() %}
-                                        {% if messages %}
-                                            {% for message in messages %}
-                                                <div class="notification is-danger">
-                                                    {{ message }}
-                                                </div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    {% endwith %}
-                                    <div class="field">
-                                        <label class="label has-text-white">First name</label>
-                                        <div class="control">
-                                            <input class="input" name="first_name" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label class="label has-text-white">Last name</label>
-                                        <div class="control">
-                                            <input class="input" name="last_name" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label class="label has-text-white">Email</label>
-                                        <div class="control">
-                                            <input class="input" name="email" type="email">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label class="label has-text-white">Password</label>
-                                        <div class="control">
-                                            <input class="input" name="password" type="password" required>
-                                        </div>
-                                    </div>
-
-                                    <button type="submit" class="button is-danger">Sign up</button>
-                                </form>
-                            </div>
-                            <button class="modal-close is-large" aria-label="close"></button>
-                        </div>
+                        </a>
                         <button id="delete-user" class="button is-danger" type="submit">
                             <strong>Delete Selected</strong>
                         </button>
@@ -68,48 +26,76 @@
             </nav>
             <table id="user_table" class="table is-striped">
                 <thead>
-                    <th><input type="checkbox" id="checkall"></th>
-                    <th>#</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
-                    <th>Last visit</th>
+                <th><input type="checkbox" id="checkall"></th>
+                <th>#</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Last visit</th>
                 </thead>
                 <tbody>
-                    {% for user in userlist %}
-                        <tr>
-                            <th><input type="checkbox" value="{{ user._id }}" name="user_checkbox"></th>
-                            <th>{{ loop.index }}</th>
-                            <td>{{ user.first_name }}</td>
-                            <td>{{ user.last_name }}</td>
-                            <td>{{ user.email }}</td>
-                            <td>{{ user.last_signin }}</td>
-                        </tr>
-                    {% endfor %}
+                {% for user in userlist %}
+                    <tr>
+                        <th><input type="checkbox" value="{{ user._id }}" name="user_checkbox"></th>
+                        <th>{{ loop.index }}</th>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.last_signin }}</td>
+                    </tr>
+                {% endfor %}
                 </tbody>
             </table>
         </form>
+        <div id="add-user-modal" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+
+                <form class="box" action="{{ url_for('bp_admin.add_users_post') }}" method="POST">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="notification is-danger">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <div class="field">
+                        <label class="label">First name</label>
+                        <div class="control">
+                            <input class="input" name="first_name" type="text" placeholder="Alice">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Last name</label>
+                        <div class="control">
+                            <input class="input" name="last_name" type="text" placeholder="Johnson">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control">
+                            <input class="input" name="email" type="email" placeholder="alice.johnson@email.com" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control">
+                            <input class="input" name="password" type="password" placeholder="************" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" name="sign-up-button" class="button is-danger">Sign up</button>
+                </form>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
     </section>
 {% endblock %}
 
 {% block scripts %}
-    <script>
-        $(document).ready(function(){
-        $("#user_table #checkall").click(function () {
-                if ($("#user_table #checkall").is(':checked')) {
-                    $("#user_table input[type=checkbox]").each(function () {
-                        $(this).prop("checked", true);
-                    });
-
-                } else {
-                    $("#user_table input[type=checkbox]").each(function () {
-                        $(this).prop("checked", false);
-                    });
-                }
-            });
-
-            ("[data-toggle=tooltip]").tooltip();
-        });
-    </script>
+    <script src="{{ url_for('static', filename='/js/checkboxes.js') }}"></script>
     <script src="{{ url_for('static', filename='/js/modal.js') }}"></script>
+
 {% endblock %}

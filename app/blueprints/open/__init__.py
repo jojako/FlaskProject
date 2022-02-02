@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from flask_login import login_user
 from app.controller import user_controller
 
 bp_open = Blueprint('bp_open', __name__)
