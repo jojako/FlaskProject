@@ -55,3 +55,8 @@ navbar-link {
 #delete-user {
     margin: 4%;
 }
+
+#profile-save-button {
+    margin-top: 10%;
+    margin-left: -1%;
+}

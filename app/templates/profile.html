@@ -3,13 +3,57 @@
 {% block title %}Profile page{% endblock %}
 
 {% block content %}
-<section class="hero is-fullheight">
-    <div class="hero-body">
-        <div class="column is-4 is-offset-4">
-            <div class="container">
-                <p class="title has-text-centered">Welcome to your profile {{ current_user.first_name }}</p>
+    <div class="hero">
+        <div class="hero-body">
+            <div class="column is-one-fifth">
+                <form class="box">
+                    <ul>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" value="">
+                                <strong>Dagens Nyheter</strong>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" value="">
+                                <strong>DN Ekonomi</strong>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" value="">
+                                <strong>Sveriges Radio</strong>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" value="">
+                                <strong>Aftonbladet</strong>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" value="">
+                                <strong>Sportbladet</strong>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" value="">
+                                <strong>CNN</strong>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <button id="profile-save-button" class="button is-light">Spara</button>
+                </form>
+            </div>
+            <div class="column">
+                <div class="container">
+                    <p class="title has-text-centered">Welcome to your profile {{ current_user.first_name }}</p>
+                </div>
             </div>
         </div>
     </div>
-</section>
 {% endblock %}
