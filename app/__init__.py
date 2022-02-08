@@ -28,6 +28,9 @@ def create_app():
     from app.blueprints.admin import bp_admin
     app.register_blueprint(bp_admin, url_prefix='/admin/')
 
+    from app.blueprints.ajax import bp_ajax
+    app.register_blueprint(bp_ajax, url_prefix='/ajax')
+
     return app
 
 
