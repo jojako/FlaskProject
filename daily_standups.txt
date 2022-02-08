@@ -35,4 +35,12 @@ en funktion som raderar ur databasen. Johannes har lagt till funktion för
 att stämpla "last-login" i användar databasen. Vi har planerat en sprint
 för veckan med ungefär samma mängd aktivteter att göra så det bör räcka
 veckan ut. Vi läser på lite om NewsAPI och Python paketet för API:n och
-ska påbörja implementering i veckan 
+ska påbörja implementering i veckan
+
+## 2022-02-08
+Genomgång av sista kritiska funktionerna som behöver implementeras. Johannes börjar implementera funktionen
+för att spara en användares val av nyhetssajter till databasen och Alexander börjar titta på hur man skapar
+en auto update funktion för nyhetsfeeden. Ärenden av lägre prioritet är lagda åt sidan för att säkerställa
+basfunktionen till deadline.
+
+
