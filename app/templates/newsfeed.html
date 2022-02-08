@@ -8,8 +8,12 @@
         <div class="container is-fullheight">
         <div class="box">
             <p class="title has-text-centered">Feed goes here</p>
+            {% for news_source in news %}
+                {{ news_source|safe }} <br>
+            {% endfor %}
         </div>
         </div>
     </div>
 </section>
 {% endblock %}
+

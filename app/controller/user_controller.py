@@ -14,7 +14,8 @@ def create_user(first_name, last_name, email, password):
         'accesslevel': 'user',
         'date_created': datetime.datetime.now(),
         'last_signin': None,
-        'activated': False
+        'activated': False,
+        'news_sources': [None]
     }
     user_repo.create_user_and_save(user)
 
