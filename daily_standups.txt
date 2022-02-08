@@ -16,12 +16,11 @@ på backloggen med uppgifter för att kunna planera sprint nästa vecka.
 ## 2022-01-24
 Funderat kring vilka nyhetskällor vi ska försöka hämta data från. Kommit fram till dessa:
 
-Aftonbladet
-Sveriges Radio
-Dagens Nyheter
-DN Ekonomi
+WALL STREET JOURNAL
+REUTERS
+BBC
 CNN
-Sportbladet/Någon annan sportpublikation
+Göteborgs Posten
 
 Vi har planerat ny sprint för veckan och diskuterat vad vi mer kan ladda på backloggen med. Vi har haft problem
 med att få vår användare att verifieras efter login och har valt att använda Joakims Document-klass för att
