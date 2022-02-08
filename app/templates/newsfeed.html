@@ -6,14 +6,31 @@
 <section class="hero is-fullheight-with-navbar">
     <div id="feed" class="column is-three-fifths is-offset-one-fifth">
         <div class="container is-fullheight">
-        <div class="box">
-            <p class="title has-text-centered">Feed goes here</p>
-            {% for news_source in news %}
-                {{ news_source|safe }} <br>
-            {% endfor %}
-        </div>
+            <div class="box">
+                <p class="title has-text-centered">Feed</p>
+                <div class="hero">
+                        {% for headline, des, i, url, s_name in context %}
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure>
+                                        <img src="{{ i }}">
+                                    </figure>
+                                </div>
+                                <div class="content">
+                                    <p class="title is-5">{{ s_name }}:{{ headline }}</p>
+                                    <p class="is-5">{{ des }}</p>
+                                </div>
+                                <footer class="card-footer">
+                                    <hr>
+                                    <a href="{{ url }}" class="card-footer-item" rel="noreferrer noopener" target="_blank">Link to article</a>
+                                </footer>
+                            </div>
+                            <hr>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 {% endblock %}
-
