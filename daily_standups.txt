@@ -16,12 +16,11 @@ på backloggen med uppgifter för att kunna planera sprint nästa vecka.
 ## 2022-01-24
 Funderat kring vilka nyhetskällor vi ska försöka hämta data från. Kommit fram till dessa:
 
-Aftonbladet
-Sveriges Radio
-Dagens Nyheter
-DN Ekonomi
+WALL STREET JOURNAL
+REUTERS
+BBC
 CNN
-Sportbladet/Någon annan sportpublikation
+Göteborgs Posten
 
 Vi har planerat ny sprint för veckan och diskuterat vad vi mer kan ladda på backloggen med. Vi har haft problem
 med att få vår användare att verifieras efter login och har valt att använda Joakims Document-klass för att
@@ -36,4 +35,12 @@ en funktion som raderar ur databasen. Johannes har lagt till funktion för
 att stämpla "last-login" i användar databasen. Vi har planerat en sprint
 för veckan med ungefär samma mängd aktivteter att göra så det bör räcka
 veckan ut. Vi läser på lite om NewsAPI och Python paketet för API:n och
-ska påbörja implementering i veckan 
+ska påbörja implementering i veckan
+
+## 2022-02-08
+Genomgång av sista kritiska funktionerna som behöver implementeras. Johannes börjar implementera funktionen
+för att spara en användares val av nyhetssajter till databasen och Alexander börjar titta på hur man skapar
+en auto update funktion för nyhetsfeeden. Ärenden av lägre prioritet är lagda åt sidan för att säkerställa
+basfunktionen till deadline.
+
+
