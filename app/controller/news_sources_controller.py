@@ -1,6 +1,9 @@
 from flask_login import current_user
 import requests
+
+import app.persistance.db
 from app.settings import API_KEY
+from app.persistance.repository import newsdb_repo
 
 
 def get_all_news_sources():
@@ -21,6 +24,11 @@ def get_all_news_sources():
             headlines_list.append(f"Reuters: <a href={article['url']}>{article['title']}</a>")
 
     return headlines_list
+
+
+def list_all_news_sources():
+    return newsdb_repo.get_all_news_source()
+
 
 
 def add_news_source_to_user(news_source):

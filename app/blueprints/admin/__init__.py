@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import current_user, login_required
 from bson.objectid import ObjectId
 
-from app.controller import user_controller
+from app.controller import user_controller, news_sources_controller
 
 bp_admin = Blueprint('bp_admin', __name__)
 
@@ -54,4 +54,5 @@ def add_users_post():
 
 @bp_admin.get('/edit-news')
 def edit_news_sources():
-    return render_template('edit_news.html')
+    all_news_sources = news_sources_controller.get_all_news_sources()
+    return render_template('edit_news.html', news_list=all_news_sources)

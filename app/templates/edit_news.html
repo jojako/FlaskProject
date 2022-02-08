@@ -28,7 +28,9 @@
                     <th>Source</th>
                 </thead>
                 <tbody>
-{#                    Create "show-news-sources feature #}
+                {% for news_place in news_list %}
+                    <p1>{{ news_place.name }}</p1>
+                {% endfor %}
                 </tbody>
             </table>
     </section>

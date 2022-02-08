@@ -24,3 +24,8 @@ class User(Document):
 
     def has_access(self, level):
         return ACCESS[self.accesslevel] >= ACCESS[level]
+
+
+class News(Document):
+    collection = db.news
+
