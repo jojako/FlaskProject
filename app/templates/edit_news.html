@@ -21,17 +21,30 @@
         </nav>
     </section>
     <section class="hero">
-            <table class="table is-striped">
+            <table id="news_table" class="table is-striped">
                 <thead>
-                    <th><input type="checkbox" name="check_all_box"></th>
+                    <th><input type="checkbox" id="checkall"></th>
                     <th>#</th>
-                    <th>Source</th>
+                    <th>Shown to users</th>
                 </thead>
                 <tbody>
                 {% for news_place in news_list %}
-                    <p1>{{ news_place.name }}</p1>
+                    <tr>
+                        <th><input type="checkbox" value="{{ news_place.name }}" name="news_checkbox"></th>
+                        <td>{{ news_place.name }}</td>
+                        {% if news_place.is_available %}
+                            <td>Yes</td>
+                        {% else %}
+                            <td>No</td>
+                        {% endif %}
+                    </tr>
                 {% endfor %}
+
                 </tbody>
             </table>
     </section>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='/js/news_checkboxes.js') }}"></script>
 {% endblock %}

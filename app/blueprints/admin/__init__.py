@@ -54,5 +54,5 @@ def add_users_post():
 
 @bp_admin.get('/edit-news')
 def edit_news_sources():
-    all_news_sources = news_sources_controller.get_all_news_sources()
+    all_news_sources = news_sources_controller.list_all_news_sources()
     return render_template('edit_news.html', news_list=all_news_sources)
