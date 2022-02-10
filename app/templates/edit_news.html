@@ -10,38 +10,36 @@
         </div>
     </section>
     <section class="hero">
-        <nav id="admin-submenu" class="navbar">
-            <div class="hero">
-                <div id="edit-user-buttons" class="navbar">
-                    <a id="delete-user" class="button is-danger">
-                        <strong>Deactivate selected source</strong>
-                    </a>
+        <form class="hero" action="{{ url_for('bp_admin.edit_news_post') }}" method="POST">
+            <nav id="admin-submenu" class="navbar">
+                <div class="hero">
+                    <div id="edit-user-buttons" class="navbar">
+                        <strong><input id="delete-news" type="submit" class="button is-danger" value="Deactivate news source"/></strong>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </section>
-    <section class="hero">
-            <table id="news_table" class="table is-striped">
-                <thead>
-                    <th><input type="checkbox" id="checkall"></th>
-                    <th>#</th>
-                    <th>Shown to users</th>
-                </thead>
-                <tbody>
-                {% for news_place in news_list %}
-                    <tr>
-                        <th><input type="checkbox" value="{{ news_place.name }}" name="news_checkbox"></th>
-                        <td>{{ news_place.name }}</td>
-                        {% if news_place.is_available %}
-                            <td>Yes</td>
-                        {% else %}
-                            <td>No</td>
-                        {% endif %}
-                    </tr>
-                {% endfor %}
+            </nav>
+        <table id="news_table" class="table is-striped">
+            <thead>
+            <th><input type="checkbox" id="checkall"></th>
+            <th>#</th>
+            <th>Shown to users</th>
+            </thead>
+            <tbody>
+            {% for news_place in news_list %}
+                <tr>
+                    <th><input type="checkbox" value="{{ news_place.name }}" name="news_checkbox"></th>
+                    <td>{{ news_place.name }}</td>
+                    {% if news_place.is_available == "true" %}
+                        <td>Yes</td>
+                    {% else %}
+                        <td>No</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
 
-                </tbody>
-            </table>
+            </tbody>
+        </table>
+        </form>
     </section>
 {% endblock %}
 

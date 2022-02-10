@@ -13,7 +13,3 @@ $(document).ready(function () {
     });
 
 });
-$(':checkbox').change(function() {
-        $("#delete-user").text("Enable/disable")
-
-});

@@ -53,6 +53,21 @@ def add_users_post():
 
 
 @bp_admin.get('/edit-news')
+@login_required
 def edit_news_sources():
     all_news_sources = news_sources_controller.list_all_news_sources()
     return render_template('edit_news.html', news_list=all_news_sources)
+
+
+@bp_admin.post('/edit-news')
+@login_required
+def edit_news_post():
+    data = request.form.get('news_checkbox')
+
+    from app.controller.news_sources_controller import deactivate_news_source
+    deactivate_news_source(data)
+
+    return redirect(url_for('bp_admin.edit_news_sources'))
+
+
+

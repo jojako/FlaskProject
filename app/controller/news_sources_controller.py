@@ -30,6 +30,8 @@ def list_all_news_sources():
     return newsdb_repo.get_all_news_source()
 
 
+def deactivate_news_source(name):
+    return newsdb_repo.deactivate_news_source(name)
 
 
 
