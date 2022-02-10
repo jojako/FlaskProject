@@ -29,7 +29,7 @@
                 <tr>
                     <th><input type="checkbox" value="{{ news_place.name }}" name="news_checkbox"></th>
                     <td>{{ news_place.name }}</td>
-                    {% if news_place.is_available == "true" %}
+                    {% if news_place.is_available %}
                         <td>Yes</td>
                     {% else %}
                         <td>No</td>

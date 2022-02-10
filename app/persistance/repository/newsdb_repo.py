@@ -9,5 +9,5 @@ def get_news_source_by_name(name):
 
 def deactivate_news_source(name):
     news_source = get_news_source_by_name(name)
-    news_source.is_available = "false"
+    news_source.is_available = False
     news_source.save()

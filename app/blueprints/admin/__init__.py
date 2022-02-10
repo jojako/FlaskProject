@@ -62,10 +62,9 @@ def edit_news_sources():
 @bp_admin.post('/edit-news')
 @login_required
 def edit_news_post():
-    data = request.form.get('news_checkbox')
-
-    from app.controller.news_sources_controller import deactivate_news_source
-    deactivate_news_source(data)
+    for news_name in request.form.getlist('news_checkbox'):
+        from app.controller.news_sources_controller import deactivate_news_source
+        deactivate_news_source(news_name)
 
     return redirect(url_for('bp_admin.edit_news_sources'))
 
