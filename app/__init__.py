@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_login import LoginManager
 from app.settings import SECRET_KEY
+import dotenv
 
 
 def create_app():
@@ -28,11 +29,9 @@ def create_app():
     from app.blueprints.admin import bp_admin
     app.register_blueprint(bp_admin, url_prefix='/admin/')
 
-    from app.blueprints.ajax import bp_ajax
-    app.register_blueprint(bp_ajax, url_prefix='/ajax')
-
     return app
 
 
 if __name__ == '__main__':
+    dotenv.load_dotenv()
     create_app().run()

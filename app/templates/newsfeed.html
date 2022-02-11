@@ -3,35 +3,36 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<section id="news-feed" class="hero is-fullheight-with-navbar">
-    <div id="feed" class="column is-three-fifths is-offset-one-fifth">
-        <div class="container is-fullheight">
-            <div class="box">
-                <div class="hero">
-                        {% for headline, image, desc, url in news %}
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure>
-                                        <img class="is-centered" src="{{ image }}" alt="">
-                                    </figure>
-                                </div>
-                                <div class="content">
-                                    <p class="title is-5">{{ headline }}</p>
-                                    <p class="is-5">{{ desc }}</p>
-                                </div>
-                                <footer class="card-footer">
-                                    <hr>
-                                    <a href="{{ url }}" class="card-footer-item" rel="noreferrer noopener" target="_blank">Link to article</a>
-                                </footer>
+    <section class="hero is-fullheight-with-navbar">
+        <div id="feed" class="column is-three-fifths is-offset-one-fifth">
+            <div class="container is-fullheight">
+                <div class="box">
+                    <div id="news-feed" class="hero">
+                        <div class="card">
+                            {% for title, desc, image, link in news %}
+                            <div class="card-image">
+                                <figure>
+                                    <img class="is-centered" src="{{ image }}" alt="">
+                                </figure>
                             </div>
-                            <hr>
-                        {% endfor %}
+                            <div class="content">
+                                <p class="title is-5">{{ title }}</p>
+                                <p class="is-5">{{ desc }}</p>
+                            </div>
+                            <footer class="card-footer">
+                                <hr>
+                                <a href="{{ link }}" class="card-footer-item" rel="noreferrer noopener"
+                                   target="_blank">Link to article</a>
+                            </footer>
+                            {% endfor %}
+                        </div>
+                        <hr>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+        </div>
+    </section>
 {% endblock %}
 
 {% block scripts %}

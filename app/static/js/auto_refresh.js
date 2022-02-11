@@ -1,12 +1,4 @@
- $(document).ready(function(){
-    let autoRefresh = function(){
-      $.ajax({
-        method:'get',cache: false,
-        url:'/ajax/get_feed',
-        success:function(data){
-          $("#news-feed").html(data);
-        }
-      });
-    }
-    setInterval(autoRefresh,20000);
-  });
+setTimeout(function () {
+    location = ''
+    console.log(value++)
+}, 900000) // Can only handle 100 requests per day so it's about 4/hour.
