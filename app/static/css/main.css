@@ -62,5 +62,13 @@ navbar-link {
 }
 
 .card {
+    padding: 4%;
+}
+
+#feed-image {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    display: block;
     padding: 3%;
 }

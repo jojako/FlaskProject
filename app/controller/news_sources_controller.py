@@ -15,6 +15,15 @@ def get_all_news_sources():
     art_image = []
     art_desc = []
     art_link = []
+    if "THE-WASHINGTON-POST" in users_news_sources:
+        r = requests.get(f'https://newsapi.org/v2/top-headlines?sources=the-washington-post&apiKey={API_KEY}')
+        data = r.json()
+        for article in data['articles']:
+            art_headline.append(article['title'])
+            art_image.append(article['urlToImage'])
+            art_desc.append(article['description'])
+            art_link.append(article['url'])
+
     if "BBC" in users_news_sources:
         r = requests.get(f'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey={API_KEY}')
         data = r.json()
@@ -24,8 +33,34 @@ def get_all_news_sources():
             art_desc.append(article['description'])
             art_link.append(article['url'])
 
-    news_data = zip(art_headline, art_desc, art_image, art_link)
+    if "CNN" in users_news_sources:
+        r = requests.get(f'https://newsapi.org/v2/top-headlines?sources=cnn&apiKey={API_KEY}')
+        data = r.json()
+        for article in data['articles']:
+            art_headline.append(article['title'])
+            art_image.append(article['urlToImage'])
+            art_desc.append(article['description'])
+            art_link.append(article['url'])
 
+    if "REUTERS" in users_news_sources:
+        r = requests.get(f'https://newsapi.org/v2/top-headlines?sources=reuters-news&apiKey={API_KEY}')
+        data = r.json()
+        for article in data['articles']:
+            art_headline.append(article['title'])
+            art_image.append(article['urlToImage'])
+            art_desc.append(article['description'])
+            art_link.append(article['url'])
+
+    if "GOTEBORGS-POSTEN" in users_news_sources:
+        r = requests.get(f'https://newsapi.org/v2/top-headlines?sources=goteborgs-posten&apiKey={API_KEY}')
+        data = r.json()
+        for article in data['articles']:
+            art_headline.append(article['title'])
+            art_image.append(article['urlToImage'])
+            art_desc.append(article['description'])
+            art_link.append(article['url'])
+
+    news_data = zip(art_headline, art_desc, art_image, art_link)
     return news_data
 
 

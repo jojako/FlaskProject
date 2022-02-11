@@ -16,7 +16,7 @@ på backloggen med uppgifter för att kunna planera sprint nästa vecka.
 ## 2022-01-24
 Funderat kring vilka nyhetskällor vi ska försöka hämta data från. Kommit fram till dessa:
 
-WALL STREET JOURNAL
+THE WASHINGTON POST
 REUTERS
 BBC
 CNN
@@ -43,4 +43,8 @@ för att spara en användares val av nyhetssajter till databasen och Alexander b
 en auto update funktion för nyhetsfeeden. Ärenden av lägre prioritet är lagda åt sidan för att säkerställa
 basfunktionen till deadline.
 
-
+## 2022-02-11
+Johannes har skapat funktioner för att kunna avaktivera en nyhetskälla som admin och Alexander har hittat en
+lösning på hur flödet kan uppdateras automatiskt på ett specifierat tidsintervall. Johannes fortsätter
+jobba på att kunna spara inställningar till databasen och Alexander lägger till resterande nyhetsskällor
+i controllern.
