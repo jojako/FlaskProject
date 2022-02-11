@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_login import LoginManager
 from app.settings import SECRET_KEY
+import dotenv
 
 
 def create_app():
@@ -32,4 +33,5 @@ def create_app():
 
 
 if __name__ == '__main__':
+    dotenv.load_dotenv()
     create_app().run()
