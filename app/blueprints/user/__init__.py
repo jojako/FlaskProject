@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 from flask import Blueprint, render_template, redirect, url_for, request
 from flask_login import login_required, logout_user, current_user
+=======
+import json
+
+from flask import Blueprint, render_template, redirect, url_for
+from flask_login import login_required, logout_user
+>>>>>>> 47272c2dc4de4f9ce303f3e727bec97be6126c32
 from app.controller.news_sources_controller import get_all_news_sources
 
 bp_user = Blueprint('bp_user', __name__)

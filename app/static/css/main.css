@@ -60,6 +60,20 @@ navbar-link {
     margin-top: 10%;
     margin-left: -1%;
 }
+<<<<<<< HEAD
 input:disabled+label {
   color: #ccc;
+=======
+
+.card {
+    padding: 4%;
+}
+
+#feed-image {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    display: block;
+    padding: 3%;
+>>>>>>> 47272c2dc4de4f9ce303f3e727bec97be6126c32
 }

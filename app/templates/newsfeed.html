@@ -3,17 +3,40 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<section class="hero is-fullheight-with-navbar">
-    <div id="feed" class="column is-three-fifths is-offset-one-fifth">
-        <div class="container is-fullheight">
-        <div class="box">
-            <p class="title has-text-centered">Feed goes here</p>
-            {% for news_source in news %}
-                {{ news_source|safe }} <br>
-            {% endfor %}
+    <section class="hero is-fullheight-with-navbar">
+        <div id="feed" class="column is-three-fifths is-offset-one-fifth">
+            <div class="container is-fullheight">
+                <div class="box">
+                    <div id="news-feed" class="hero">
+                        <div class="card">
+                            {% for title, desc, image, link in news %}
+                            <div class="card-image">
+                                <figure>
+                                    <img id="feed-image" src="{{ image }}" alt="">
+                                </figure>
+                            </div>
+                            <div class="content">
+                                <p class="title is-size-3">{{ title }}</p>
+                                <p class="is-size-6">{{ desc }}</p>
+                            </div>
+                            <footer>
+                                <hr>
+                                <a href="{{ link }}" class="card-footer-item is-size-6 is-black" rel="noreferrer noopener"
+                                   target="_blank">Link to article</a>
+                            </footer>
+                                <hr>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
         </div>
         </div>
-    </div>
-</section>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/auto_refresh.js') }}"></script>
 {% endblock %}
 
