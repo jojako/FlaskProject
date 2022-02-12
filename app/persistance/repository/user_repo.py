@@ -15,6 +15,7 @@ def set_lastsignin(email):
     user.last_signin = datetime.datetime.now()
     user.save()
 
+
 def find_all_users():
     return User.find()
 

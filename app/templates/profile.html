@@ -6,26 +6,25 @@
     <div class="hero">
         <div class="hero-body">
             <div class="column is-one-fifth">
-                <form class="box">
+                <form class="box" action="{{ url_for('bp_user.save_selections') }}" method="POST">
                     <ul>
-                        <li>
-                            <label class="checkbox">
-                                <input type="checkbox" value="CNN">
-                                <strong>CNN</strong>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="checkbox">
-                                <input type="checkbox" value="Reuters">
-                                <strong>Reuters</strong>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="checkbox">
-                                <input type="checkbox" value="BBC">
-                                <strong>BBC</strong>
-                            </label>
-                        </li>
+                        {% for news_place in news_list %}
+                            <li>
+                                {% if news_place.is_available %}
+                                    {% if news_place.name in current_user.news_sources %}
+                                        <input type="checkbox" id="{{ news_place.name }}" name="news_checkbox" value="{{ news_place.name }}" checked>
+                                        <label for="{{ news_place.name }}">{{ news_place.name }}</label>
+                                    {% else %}
+                                        <input type="checkbox" id="{{ news_place.name }}" name="news_checkbox" value="{{ news_place.name }}">
+                                        <label for="{{ news_place.name }}">{{ news_place.name }}</label>
+                                    {% endif %}
+
+                                {% else %}
+                                    <input type="checkbox" id="{{ news_place.name }}" name="news_checkbox" value="{{ news_place.name }}" disabled="disabled">
+                                    <label for="{{ news_place.name }}">{{ news_place.name }}</label>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
                     </ul>
 
                     <button id="profile-save-button" class="button is-light">Save</button>

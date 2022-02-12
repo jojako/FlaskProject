@@ -60,3 +60,6 @@ navbar-link {
     margin-top: 10%;
     margin-left: -1%;
 }
+input:disabled+label {
+  color: #ccc;
+}
