@@ -20,7 +20,7 @@ class User(Document):
         return False
 
     def get_id(self):
-        return self.email
+        return self.emailNews
 
     def has_access(self, level):
         return ACCESS[self.accesslevel] >= ACCESS[level]
