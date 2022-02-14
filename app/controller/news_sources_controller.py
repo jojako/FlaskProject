@@ -8,6 +8,7 @@ from app.persistance.repository import newsdb_repo
 
 def get_all_news_sources():
     users_news_sources = current_user.news_sources
+
     if len(users_news_sources) == 0:
         return "No news sources selected! Please select them under account settings."
 
@@ -76,12 +77,12 @@ def delete_all_news_sources_from_user(user):
     return newsdb_repo.delete_all_news_sources(user)
 
 
-<<<<<<< HEAD
+
 def add_news_source(user, news_source):
     return newsdb_repo.add_news_source(user, news_source)
-=======
+
 
 def remove_news_source_from_user(news_source):
     pass
->>>>>>> 47272c2dc4de4f9ce303f3e727bec97be6126c32
+
 
