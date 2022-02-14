@@ -9,8 +9,8 @@ from app.persistance.repository import newsdb_repo
 def get_all_news_sources():
     users_news_sources = current_user.news_sources
 
-    if len(users_news_sources) == 0:
-        return "No news sources selected! Please select them under account settings."
+    if users_news_sources == None:
+        return None
 
     art_headline = []
     art_image = []

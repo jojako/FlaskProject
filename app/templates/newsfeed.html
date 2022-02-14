@@ -9,6 +9,7 @@
                 <div class="box">
                     <div id="news-feed" class="hero">
                         <div class="card">
+                            {% if news != 'none' %}
                             {% for title, desc, image, link in news %}
                             <div class="card-image">
                                 <figure>
@@ -26,6 +27,9 @@
                             </footer>
                                 <hr>
                             {% endfor %}
+                        {% else %}
+                        No news sources selected! Please select them in your profile page.
+                        {% endif %}
                         </div>
                     </div>
                     <hr>

@@ -13,6 +13,7 @@ def delete_all_news_sources(user):
     user.delete_field('news_sources')
     user.news_sources = [None]
 
+
 def add_news_source(user, news_source):
     user.news_sources = news_source
     user.save()

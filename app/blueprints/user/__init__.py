@@ -31,8 +31,12 @@ def save_selections():
 @bp_user.get('/newsfeed')
 @login_required
 def newsfeed():
+    if not current_user.news_sources:
+        return render_template('newsfeed.html', news='none')
+
     from app.controller.news_sources_controller import get_all_news_sources
     news = get_all_news_sources()
+
     return render_template('newsfeed.html', news=news)
 
 
