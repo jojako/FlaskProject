@@ -1,36 +1,35 @@
 #navbar-hero {
-    background-color: #406882;
+    background-color: #cbc5bf;
 }
 
 #splash-screen {
-    background-color: #B1D0E0;
+    background-image: url("../img/background.jpg");
 }
 
 .navbar-item {
     color: #ffffff;
+    font-weight: bold;
 }
 a.navbar-item:hover {
-    background-color: #406882;
+    background-color: #cbc5bf;
     color: #000000;
 }
 
-.navbar-link {
+a.navbar-link {
     color: #ffffff;
 }
-navbar-link:hover {
-    background-color: #406882;
+
+a.navbar-link:hover {
+    font-weight: bold;
+}
+
+#dropdown-link {
+    background-color: #cbc5bf;
+}
+
+#dropdown-link:hover {
     color: #000000;
 }
-
-
-navbar-link {
-    background-color: #406882;
-}
-
-.navbar-dropdown {
-    background-color: #406882;
-}
-
 
 #about {
     background-color: #F9F9F9;
@@ -38,6 +37,11 @@ navbar-link {
 
 #welcome-splash-title {
     font-size: 8rem;
+    color: #000000;
+}
+
+#welcome-splash-subtitle {
+    color: #2a2a2a;
 }
 
 #form-background {
@@ -45,7 +49,7 @@ navbar-link {
 }
 
 #admin-submenu {
-    background-color: #406882;
+    background-color: #cbc5bf;
 }
 
 #add-user {
@@ -53,6 +57,14 @@ navbar-link {
 }
 
 #delete-user {
+    margin: 4%;
+}
+
+#delete-news {
+    margin: 4%;
+}
+
+#activate-news {
     margin: 4%;
 }
 

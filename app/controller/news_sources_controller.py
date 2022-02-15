@@ -73,16 +73,13 @@ def deactivate_news_source(name):
     return newsdb_repo.deactivate_news_source(name)
 
 
+def activate_news_source(name):
+    return newsdb_repo.activate_news_source(name)
+
+
 def delete_all_news_sources_from_user(user):
     return newsdb_repo.delete_all_news_sources(user)
 
 
-
 def add_news_source(user, news_source):
     return newsdb_repo.add_news_source(user, news_source)
-
-
-def remove_news_source_from_user(news_source):
-    pass
-
-

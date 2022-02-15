@@ -14,7 +14,12 @@
             <nav id="admin-submenu" class="navbar">
                 <div class="hero">
                     <div id="edit-user-buttons" class="navbar">
-                        <strong><input id="delete-news" type="submit" class="button is-danger" value="Deactivate news source"/></strong>
+                        <button id="activate-news" class="button" type="submit" formaction="/admin/activate-news">
+                            <strong>Activate selected</strong>
+                        </button>
+                        <button id="delete-news" class="button is-danger" type="submit">
+                            <strong>Deactivate selected</strong>
+                        </button>
                     </div>
                 </div>
             </nav>

@@ -30,6 +30,7 @@
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Email</th>
+                <th>Type</th>
                 <th>Last visit</th>
                 </thead>
                 <tbody>
@@ -40,6 +41,7 @@
                         <td>{{ user.first_name }}</td>
                         <td>{{ user.last_name }}</td>
                         <td>{{ user.email }}</td>
+                        <td><strong>{{ user.accesslevel }}</td>
                         <td>{{ user.last_signin }}</td>
                     </tr>
                 {% endfor %}
@@ -51,15 +53,6 @@
             <div class="modal-content">
 
                 <form class="box" action="{{ url_for('bp_admin.add_users_post') }}" method="POST">
-                    {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                            {% for message in messages %}
-                                <div class="notification is-danger">
-                                    {{ message }}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
                     <div class="field">
                         <label class="label">First name</label>
                         <div class="control">
@@ -85,7 +78,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" name="sign-up-button" class="button is-danger">Sign up</button>
+                    <button type="submit" name="sign-up-button" class="button is-danger">Add user</button>
                 </form>
             </div>
             <button class="modal-close is-large" aria-label="close"></button>
